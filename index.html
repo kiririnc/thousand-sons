@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>千子军团 · 第十五军团 — 大远征时代军种档案（荷鲁斯叛乱前）</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="description" content="战锤40K · 30k时期（荷鲁斯叛乱前）千子军团全兵种档案：马格努斯、五大巫师学派、赛赫迈特终结者等。深红与黄金的普洛斯佩罗。">
+<style>
+  :root{
+    --bg:#120d0a;
+    --bg2:#181008;
+    --panel:#1e140c;
+    --panel2:#241710;
+    --line:#5a3d1c;
+    --line-soft:#3a2814;
+    --gold:#c9a227;
+    --gold-bright:#e3c15a;
+    --gold-dim:#8a6d1f;
+    --crimson:#a83232;
+    --crimson-bright:#c9473f;
+    --ivory:#eadcc0;
+    --ivory-dim:#c4b291;
+    --muted:#9a8a6e;
+    --font-disp:"Palatino Linotype","Book Antiqua",Palatino,"Georgia","Songti SC","STSong","Times New Roman",serif;
+    --font-body:"Avenir Next","Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:
+      radial-gradient(1200px 600px at 50% -100px, rgba(168,50,50,.10), transparent 60%),
+      radial-gradient(900px 500px at 90% 20%, rgba(201,162,39,.05), transparent 55%),
+      var(--bg);
+    color:var(--ivory);
+    font-family:var(--font-body);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--crimson);color:#fff}
+
+  /* ---------- 顶部英雄区 ---------- */
+  .hero{
+    position:relative;
+    min-height:78vh;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:80px 24px 90px;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-bg{
+    position:absolute;inset:0;z-index:0;
+    background:url('img/hero_prospero.jpg') center/cover no-repeat;
+    opacity:.32;filter:saturate(.85) contrast(1.05);
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg, rgba(18,13,10,.55) 0%, rgba(18,13,10,.35) 40%, var(--bg) 100%);
+  }
+  .hero-inner{position:relative;z-index:2;max-width:900px}
+  .hero-emblem{
+    width:150px;height:auto;margin:0 auto 28px;
+    filter:drop-shadow(0 0 22px rgba(201,162,39,.35));
+  }
+  .hero-kicker{
+    font-family:var(--font-disp);letter-spacing:.42em;text-transform:uppercase;
+    color:var(--gold-bright);font-size:13px;margin-bottom:18px;
+  }
+  .hero h1{
+    font-family:var(--font-disp);font-weight:600;
+    font-size:clamp(44px,8vw,92px);line-height:1.04;
+    letter-spacing:.06em;color:var(--ivory);
+    text-shadow:0 2px 30px rgba(168,50,50,.45);
+  }
+  .hero h1 .red{color:var(--crimson-bright)}
+  .hero-sub{
+    font-family:var(--font-disp);letter-spacing:.28em;text-transform:uppercase;
+    color:var(--gold);font-size:clamp(14px,2.4vw,20px);margin-top:14px;
+  }
+  .hero-era{
+    display:inline-block;margin-top:30px;padding:9px 22px;
+    border:1px solid var(--line);border-radius:2px;
+    font-size:13px;letter-spacing:.16em;color:var(--ivory-dim);
+    background:rgba(30,20,12,.55);
+  }
+  .hero-era b{color:var(--gold-bright);font-weight:500}
+  .ornament{color:var(--gold-dim);letter-spacing:1.2em;font-size:15px;margin:20px 0 0;opacity:.9}
+
+  /* ---------- 导航 ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(18,13,10,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  nav .wrap{
+    max-width:1100px;margin:0 auto;padding:0 20px;
+    display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+  }
+  nav a{
+    color:var(--ivory-dim);text-decoration:none;font-size:14px;
+    padding:13px 13px;letter-spacing:.06em;transition:.2s;white-space:nowrap;
+  }
+  nav a:hover{color:var(--gold-bright)}
+  nav .brand{
+    font-family:var(--font-disp);color:var(--gold);letter-spacing:.18em;
+    margin-right:auto;font-size:15px;text-transform:uppercase;
+  }
+
+  /* ---------- 通用区块 ---------- */
+  main{max-width:1100px;margin:0 auto;padding:0 24px 40px}
+  section{padding:70px 0 10px}
+  .sec-head{text-align:center;margin-bottom:46px}
+  .sec-eyebrow{
+    font-family:var(--font-disp);letter-spacing:.4em;text-transform:uppercase;
+    color:var(--crimson-bright);font-size:12px;margin-bottom:14px;
+  }
+  .sec-title{
+    font-family:var(--font-disp);font-weight:600;font-size:clamp(28px,4.6vw,44px);
+    letter-spacing:.08em;color:var(--ivory);
+  }
+  .sec-title .g{color:var(--gold-bright)}
+  .sec-desc{
+    max-width:720px;margin:20px auto 0;color:var(--ivory-dim);
+    font-size:16px;
+  }
+  .divider{
+    display:flex;align-items:center;justify-content:center;gap:16px;
+    margin:10px auto 0;color:var(--gold-dim);max-width:360px;
+  }
+  .divider::before,.divider::after{
+    content:"";flex:1;height:1px;
+    background:linear-gradient(90deg,transparent,var(--line));
+  }
+  .divider::after{background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- 总览 ---------- */
+  .overview-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  @media(max-width:820px){.overview-grid{grid-template-columns:1fr}}
+  .overview-text p{margin-bottom:18px;color:var(--ivory-dim);font-size:16px}
+  .overview-text p b{color:var(--gold-bright);font-weight:500}
+  .badge-box{
+    text-align:center;padding:30px;
+    border:1px solid var(--line);background:var(--panel);
+    border-radius:4px;position:relative;
+  }
+  .badge-box::before,.badge-box::after{
+    content:"✦";position:absolute;color:var(--gold);font-size:14px;
+  }
+  .badge-box::before{top:-8px;left:14px}
+  .badge-box::after{bottom:-8px;right:14px}
+  .badge-box img{width:100%;max-width:320px;height:auto;margin:0 auto;display:block}
+  .badge-box .cap{margin-top:16px;color:var(--muted);font-size:13px;letter-spacing:.08em}
+
+  /* ---------- 组织结构 ---------- */
+  .org-box{
+    border:1px solid var(--line);background:var(--panel);border-radius:4px;
+    padding:14px;text-align:center;
+  }
+  .org-box img{width:100%;height:auto;border-radius:2px}
+  .org-box a{display:block}
+  .org-tip{margin-top:12px;color:var(--muted);font-size:13px;letter-spacing:.05em}
+
+  /* ---------- 军种卡片 ---------- */
+  .unit-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px;
+  }
+  .unit-card{
+    background:var(--panel);border:1px solid var(--line-soft);border-radius:4px;
+    overflow:hidden;display:flex;flex-direction:column;
+    transition:transform .25s,border-color .25s,box-shadow .25s;
+    position:relative;
+  }
+  .unit-card:hover{
+    transform:translateY(-4px);border-color:var(--gold-dim);
+    box-shadow:0 14px 40px rgba(0,0,0,.5),0 0 0 1px rgba(201,162,39,.12);
+  }
+  .unit-card .ph{
+    aspect-ratio:4/3;overflow:hidden;background:var(--bg2);
+    position:relative;border-bottom:1px solid var(--line-soft);
+  }
+  .unit-card .ph img{
+    width:100%;height:100%;object-fit:cover;object-position:center top;
+    display:block;transition:transform .5s;
+  }
+  .unit-card:hover .ph img{transform:scale(1.04)}
+  .unit-card .body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .unit-tag{
+    align-self:flex-start;font-size:11px;letter-spacing:.14em;
+    color:var(--gold-bright);border:1px solid var(--line);
+    padding:3px 10px;border-radius:2px;text-transform:uppercase;
+  }
+  .unit-card h3{font-family:var(--font-disp);font-size:22px;letter-spacing:.04em;color:var(--ivory)}
+  .unit-card h3 .en{display:block;font-size:13px;letter-spacing:.16em;color:var(--muted);font-weight:400;margin-top:3px}
+  .unit-card p{font-size:14.5px;color:var(--ivory-dim)}
+
+  /* ---------- 五大巫师学派 ---------- */
+  .cult-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:22px;
+  }
+  .cult-card{
+    text-align:center;padding:28px 18px;border:1px solid var(--line-soft);
+    background:var(--panel);border-radius:4px;transition:.25s;
+  }
+  .cult-card:hover{border-color:var(--gold-dim);background:var(--panel2)}
+  .cult-card img{width:110px;height:auto;margin:0 auto 18px;display:block;filter:drop-shadow(0 0 14px rgba(168,50,50,.3))}
+  .cult-card h3{font-family:var(--font-disp);font-size:20px;color:var(--gold-bright);letter-spacing:.05em}
+  .cult-card .en{font-size:12px;letter-spacing:.18em;color:var(--muted);margin:4px 0 10px;text-transform:uppercase}
+  .cult-card .dom{font-size:13px;color:var(--crimson-bright);letter-spacing:.1em;margin-bottom:10px}
+  .cult-card p{font-size:13.5px;color:var(--ivory-dim)}
+
+  /* ---------- 页脚 ---------- */
+  footer{
+    margin-top:40px;border-top:1px solid var(--line-soft);
+    background:var(--bg2);padding:44px 24px 56px;text-align:center;
+  }
+  footer .f-orn{color:var(--gold-dim);font-size:18px;letter-spacing:.8em;margin-bottom:18px}
+  footer p{color:var(--muted);font-size:13px;max-width:720px;margin:0 auto 10px;line-height:1.8}
+  footer .src a{color:var(--gold-dim);text-decoration:none}
+  footer .src a:hover{color:var(--gold-bright)}
+  footer .legal{font-size:11.5px;opacity:.7}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <img class="hero-emblem" src="img/legion_badge.png" alt="千子军团徽记">
+    <div class="hero-kicker">Adeptus Astartes · Legio XV · M31</div>
+    <h1>千子<span class="red">军团</span></h1>
+    <div class="hero-sub">Thousand Sons — The Fifteenth Legion</div>
+    <div class="hero-era">荷鲁斯叛乱前 · <b>大远征时代</b> · 普洛斯佩罗的深红与黄金</div>
+    <div class="ornament">✦ ☥ ✦</div>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">千子 · XV</a>
+    <a href="#overview">总览</a>
+    <a href="#org">组织结构</a>
+    <a href="#command">指挥</a>
+    <a href="#infantry">步兵</a>
+    <a href="#cults">巫师学派</a>
+    <a href="#elite">精英</a>
+    <a href="#vehicles">载具</a>
+    <a href="#auxilia">辅助军</a>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- 军团总览 -->
+  <section id="overview">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Legion Overview</div>
+      <h2 class="sec-title">军团<span class="g">总览</span></h2>
+      <div class="divider">☥</div>
+    </div>
+    <div class="overview-grid">
+      <div class="overview-text">
+        <p><b>第十五军团「千子」</b>（Thousand Sons）由原体 <b>马格努斯·红</b>（Magnus the Red）统率，母星为知识之城 <b>普洛斯佩罗</b>（Prospero）。</p>
+        <p>在荷鲁斯叛乱爆发之前，千子军团以<b>全员皆具灵能天赋</b>而著称——这在阿斯塔特诸军团中独一无二。他们被容许研习巫术、按「<b>五大巫师学派</b>」分门别类，是帝皇麾下对灵能理解最为深邃的军团。</p>
+        <p>然而这份天赋也带来了 <b>「血肉异变」</b>（Flesh-Change）的诅咒——部分成员会不受控制地发生突变。这使得军团兵力长期受限，成为诸军团中<b>规模最小</b>的一支，但也因此更加精悍。</p>
+        <p>本档案记录的是千子军团<b>尚未堕入混沌、仍为帝国效忠</b>时的编制与军种。</p>
+      </div>
+      <div class="badge-box">
+        <img src="img/legion_badge.png" alt="千子军团叛乱前徽记">
+        <div class="cap">千子军团徽记 · 叛乱前（Pre-Heresy）</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 组织结构 -->
+  <section id="org">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Organisation</div>
+      <h2 class="sec-title">组织<span class="g">结构</span></h2>
+      <div class="divider">☥</div>
+      <p class="sec-desc">千子军团的编制异于其他军团：以「<b>伙伴团</b>」（Fellowship）为基本单位，每个伙伴团与某一巫师学派紧密相连，并保有五大秘术会等专业部队。下图为军团组织结构全览。</p>
+    </div>
+    <div class="org-box">
+      <a href="img/org_chart.jpg" target="_blank" rel="noopener">
+        <img src="img/org_chart.jpg" alt="千子军团组织结构图" loading="lazy">
+      </a>
+      <div class="org-tip">▲ 点击图片查看高清大图</div>
+    </div>
+  </section>
+
+  <!-- 指挥 -->
+  <section id="command">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Command</div>
+      <h2 class="sec-title">军团<span class="g">指挥</span></h2>
+      <div class="divider">☥</div>
+    </div>
+    <div class="unit-grid" id="grid-command"></div>
+  </section>
+
+  <!-- 步兵 -->
+  <section id="infantry">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Battleline Infantry</div>
+      <h2 class="sec-title">步兵<span class="g">军种</span></h2>
+      <div class="divider">☥</div>
+    </div>
+    <div class="unit-grid" id="grid-infantry"></div>
+  </section>
+
+  <!-- 五大巫师学派 -->
+  <section id="cults">
+    <div class="sec-head">
+      <div class="sec-eyebrow">The Five Cults</div>
+      <h2 class="sec-title">五大巫师<span class="g">学派</span></h2>
+      <div class="divider">☥</div>
+      <p class="sec-desc">千子军团巫术体系的基石。每一名军团巫师都隶属于一个学派，专精某一领域的灵能。五大学派共同构成了马格努斯治下最完备的灵能学术体系。</p>
+    </div>
+    <div class="cult-grid" id="grid-cults"></div>
+  </section>
+
+  <!-- 精英 -->
+  <section id="elite">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Elite &amp; Occult Orders</div>
+      <h2 class="sec-title">精英<span class="g">部队</span></h2>
+      <div class="divider">☥</div>
+    </div>
+    <div class="unit-grid" id="grid-elite"></div>
+  </section>
+
+  <!-- 载具 -->
+  <section id="vehicles">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Armour &amp; Vehicles</div>
+      <h2 class="sec-title">装甲与<span class="g">载具</span></h2>
+      <div class="divider">☥</div>
+    </div>
+    <div class="unit-grid" id="grid-vehicles"></div>
+  </section>
+
+  <!-- 辅助军 -->
+  <section id="auxilia">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Auxilia</div>
+      <h2 class="sec-title">辅助<span class="g">军</span></h2>
+      <div class="divider">☥</div>
+    </div>
+    <div class="unit-grid" id="grid-auxilia"></div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="f-orn">☥ ✦ ☥</div>
+  <p>本档案专注于战锤40K宇宙的 <b>30k 时期</b>——即荷鲁斯叛乱爆发之前、千子军团仍为帝国第十五军团效忠的时代。</p>
+  <p>这是一份由粉丝制作的资料站，与 Games Workshop 无关，不用于商业用途。战锤40K（Warhammer 40,000）及所有相关名称、图像版权归 Games Workshop / 原画作者所有。</p>
+  <p class="src">资料参考：<a href="https://warhammer40k.fandom.com/wiki/Thousand_Sons" target="_blank" rel="noopener">Warhammer 40k Wiki（Fandom）</a> · <a href="https://wh40k.lexicanum.com/wiki/Thousand_Sons" target="_blank" rel="noopener">Lexicanum</a></p>
+  <p class="legal">XV Legion Archive · 千子军团军种档案</p>
+</footer>
+
+<script>
+const IMG = 'img/';
+
+// 指挥
+const command = [
+  {img:'magnus.jpg', name:'马格努斯·红', en:'Magnus the Red', tag:'军团原体 · Primarch',
+   desc:'千子军团的基因之父，帝国最强大的灵能者，被誉为「深红之王」。叛乱之前，马格努斯将千子塑造成一支以知识与灵能见长的军团，坐镇母星普洛斯佩罗，统领五大巫师学派。他笃信「知识即力量」，也是少数真正理解帝皇网道计划的原体之一。'},
+  {img:'ahriman.jpg', name:'阿里曼', en:'Ahzek Ahriman', tag:'第一连队长 · 首席智库',
+   desc:'千子军团最杰出的战士兼巫师，第一伙伴团的统领与军团首席智库。阿里曼在灵能与武艺两方面皆臻化境，对马格努斯忠心耿耿。叛乱前的他倾尽心力以灵能庇护军团，对抗「血肉异变」的诅咒。'},
+  {img:'ankhu_anen.jpg', name:'安库·阿嫩', en:'Ankhu Anen', tag:'首席占星师 · 先知',
+   desc:'军团的占星大师，负责解读星象与命运，为马格努斯提供预言与占卜的建言。他精通科维努斯学派的预言术，是军团在灵能占卜领域的权威。'},
+  {img:'uthizzar.jpg', name:'乌提扎尔', en:'Uthizzar', tag:'高级智库 · 护盾大师',
+   desc:'马格努斯核心圈中的高级智库，精通拉普提安学派的念动力护盾术，是军团最强大的护盾施法者之一，以沉稳与节制闻名。'},
+];
+
+// 步兵
+const infantry = [
+  {img:'legionary_mk2.jpg', name:'军团士兵', en:'Legionary', tag:'基础步兵 · 灵能者',
+   desc:'千子军团的基础战士。与普通星际战士不同，千子每一名成员都具备灵能天赋。他们身着红金相间的动力甲，左肩刻有军团编号「XV」与蛇纹徽记，装备爆弹枪与链锯剑。'},
+  {img:'tactical.jpg', name:'战术小队', en:'Tactical Squad', tag:'中坚战术单元',
+   desc:'军团的中坚战术单元，负责常规攻防。千子的战术小队成员皆为训练有素的灵能者，能在战斗中施展简易巫术辅助作战，配属一名小队军士。'},
+  {img:'assault.jpg', name:'突击小队', en:'Assault Squad', tag:'近战突击 · 跳跃步兵',
+   desc:'装备跳跃背包与链锯剑／动力武器的近战突击单元，负责快速穿插、抢占要点。千子的突击小队常配合预言术预判敌情，于最佳时机发起冲锋。'},
+  {img:'heavy_support.jpg', name:'重武器支援小队', en:'Heavy Support Squad', tag:'重型火力支援',
+   desc:'装备重爆弹枪、等离子炮、熔炉炮等重型武器的火力支援单元，负责压制与摧毁敌方装甲与工事。千子的重武器手同样能以灵能稳定射击、引导炮火。'},
+  {img:'command_squad.jpg', name:'指挥小队', en:'Command Squad', tag:'连队指挥护卫',
+   desc:'护卫连队长与军官的随行战士，由老兵与精英组成，配属旗手、医护兵与精锐卫士。千子的指挥小队常兼任灵能仪式中的护卫与施法辅助。'},
+  {img:'standard_bearer.jpg', name:'军团旗手', en:'Legion Standard Bearer', tag:'荣誉旗手',
+   desc:'高举军团战旗的荣誉战士。千子的战旗不仅象征军团，更承载灵能共鸣，能激励同袍、稳固士气，甚至在战场上引导灵能力量。'},
+];
+
+// 五大巫师学派
+const cults = [
+  {img:'cult_athanaean.png', name:'阿泽克学派', en:'Athanaeans', dom:'心灵术 · 读心', desc:'掌管心灵感应与读心，负责情报刺探与战场上的心灵通讯。'},
+  {img:'cult_pyrae.png', name:'皮里安学派', en:'Pyrae', dom:'火术 · 控火', desc:'操控火焰与能量，是军团最主要的破坏性攻击力量。'},
+  {img:'cult_raptora.png', name:'拉普提安学派', en:'Raptora', dom:'护盾术 · 念动力', desc:'架设灵能护盾，抵御远程火力与炮击，守护同袍。'},
+  {img:'cult_corvidae.png', name:'科维努斯学派', en:'Corvidae', dom:'预言术 · 占卜', desc:'占卜未来、预判战局，是军团运筹帷幄的战略智囊。'},
+  {img:'cult_pavoni.png', name:'帕沃尼学派', en:'Pavoni', dom:'生体术 · 塑形', desc:'改造肉身、治愈伤痛，也与「血肉异变」的诅咒紧密相关。'},
+];
+
+// 精英
+const elite = [
+  {img:'sekhmet.jpg', name:'赛赫迈特终结者', en:'Sekhmet Terminators', tag:'精英终结者 · 原体近卫',
+   desc:'以古泰拉狮首女神「赛赫迈特」命名的精英终结者，马格努斯与军团核心的贴身护卫。全员皆为一流的灵能战士，装备终结者装甲与动力武器，是军团最精锐的拳头。'},
+  {img:'khenetai.png', name:'凯尼泰秘术会', en:'Khenetai Occult', tag:'灵能剑士',
+   desc:'以双剑与灵能刀法闻名的秘术会。凯尼泰剑士双手各持一柄灵能战刃，配合预判术施展致命的剑舞，是军团中最令人胆寒的近战大师。'},
+  {img:'ammitara.png', name:'阿密塔拉秘术会', en:'Ammitara Occult', tag:'侦查 · 渗透',
+   desc:'以古泰拉「吞噬者」阿密特命名的秘术会，专职侦查、渗透与暗杀。成员皆为隐匿与心灵术的高手，能无声无息地潜入敌后。'},
+  {img:'magnus_coven.jpg', name:'马格努斯之盟', en:"Magnus' Coven", tag:'原体近卫',
+   desc:'马格努斯的个人近卫，由军团中地位最高的巫师组成，日夜守护原体。他们是五大学派的顶尖宗师，既是顾问，也是最忠诚的盾与剑。'},
+];
+
+// 载具
+const vehicles = [
+  {img:'rhino.jpg', name:'犀牛运兵车', en:'Rhino', tag:'装甲运兵车',
+   desc:'帝国通用的装甲运兵车。千子版本以红金涂装与灵能符文装饰，用于快速投送步兵穿越战场，可靠耐用。'},
+  {img:'land_raider.jpg', name:'兰德掠夺者', en:'Land Raider', tag:'重型突击坦克',
+   desc:'重型突击坦克，兼具强大火力与厚重装甲，可搭载终结者小队直插敌阵。千子的兰德掠夺者常加装灵能共鸣装置。'},
+  {img:'dreadnought.jpg', name:'无畏机甲', en:'Dreadnought', tag:'步行机甲 · 荣誉石棺',
+   desc:'承载重伤濒死战士的机甲石棺。千子的无畏机甲内封存着军团最古老的战士，其灵能之火仍能透过机甲施展巫术，是战场上的移动堡垒。'},
+];
+
+// 辅助军
+const auxilia = [
+  {img:'spireguard.jpg', name:'普洛斯佩罗尖塔卫队', en:'Prosperine Spireguard', tag:'母星防卫军',
+   desc:'千子母星普洛斯佩罗的本土防卫军，由凡人组成，负责守卫提兹卡城的高塔与知识殿堂。装备精良、训练有素，是马格努斯忠诚的凡人武装。'},
+];
+
+function unitCard(u){
+  return `<article class="unit-card">
+    <div class="ph"><img src="${IMG}${u.img}" alt="${u.name}" loading="lazy"></div>
+    <div class="body">
+      <span class="unit-tag">${u.tag}</span>
+      <h3>${u.name}<span class="en">${u.en}</span></h3>
+      <p>${u.desc}</p>
+    </div>
+  </article>`;
+}
+function cultCard(c){
+  return `<div class="cult-card">
+    <img src="${IMG}${c.img}" alt="${c.name}" loading="lazy">
+    <h3>${c.name}</h3>
+    <div class="en">${c.en}</div>
+    <div class="dom">${c.dom}</div>
+    <p>${c.desc}</p>
+  </div>`;
+}
+
+document.getElementById('grid-command').innerHTML  = command.map(unitCard).join('');
+document.getElementById('grid-infantry').innerHTML = infantry.map(unitCard).join('');
+document.getElementById('grid-cults').innerHTML    = cults.map(cultCard).join('');
+document.getElementById('grid-elite').innerHTML    = elite.map(unitCard).join('');
+document.getElementById('grid-vehicles').innerHTML = vehicles.map(unitCard).join('');
+document.getElementById('grid-auxilia').innerHTML  = auxilia.map(unitCard).join('');
+</script>
+
+</body>
+</html>
