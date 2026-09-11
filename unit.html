@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>军种档案 — 千子军团（荷鲁斯叛乱前）</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="description" content="战锤40K 30k时期（荷鲁斯叛乱前）千子军团军种详细档案。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">千子 · XV</a>
+    <a href="index.html#overview">总览</a>
+    <a href="index.html#command">指挥</a>
+    <a href="index.html#infantry">步兵</a>
+    <a href="index.html#cults">学派</a>
+    <a href="index.html#elite">精英</a>
+    <a href="index.html#vehicles">载具</a>
+    <a href="index.html#auxilia">辅助军</a>
+  </div>
+</nav>
+
+<div id="detail-root"></div>
+
+<footer>
+  <div class="f-orn">☥ ✦ ☥</div>
+  <p>本档案<b>仅收录千子军团堕落之前</b>（荷鲁斯叛乱前）的内容。粉丝资料站，与 Games Workshop 无关；图片版权归 Games Workshop / 原画作者所有。</p>
+  <p class="legal">XV Legion Archive · 千子军团军种档案（Pre-Heresy）</p>
+</footer>
+
+<script src="data.js"></script>
+<script>
+function render(){
+  const id = (location.hash || "").replace("#", "");
+  const idx = UNITS.findIndex(u => u.id === id);
+  const root = document.getElementById('detail-root');
+
+  if (idx < 0){
+    root.innerHTML = `<div class="detail-hero">
+        <a class="back-link" href="index.html">返回军团档案</a>
+        <div class="kicker">Legio XV · Pre-Heresy</div>
+        <h1 style="font-family:var(--font-disp)">未找到该军种</h1>
+        <span class="tag">请从军团档案中选择</span>
+      </div>`;
+    document.title = "军种档案 — 千子军团（荷鲁斯叛乱前）";
+    window.scrollTo(0, 0);
+    return;
+  }
+  const u = UNITS[idx];
+  const prev = UNITS[(idx - 1 + UNITS.length) % UNITS.length];
+  const next = UNITS[(idx + 1) % UNITS.length];
+
+  document.title = u.name + " · 千子军团（荷鲁斯叛乱前）";
+
+  const sections = u.sections.map(s =>
+    `<div class="detail-section"><h2>${s.h}</h2><p>${s.t}</p></div>`
+  ).join('');
+
+  root.innerHTML = `
+  <div class="detail-hero">
+    <a class="back-link" href="index.html">返回军团档案</a>
+    <div class="kicker">Legio XV · Pre-Heresy</div>
+    <h1>${u.name}<span class="en">${u.en}</span></h1>
+    <span class="tag">${u.tag}</span>
+  </div>
+  <div class="detail-wrap">
+    <div class="detail-figure"><img src="${u.img}" alt="${u.name}"></div>
+    ${sections}
+    <div class="detail-nav">
+      <a href="unit.html#${prev.id}"><span class="dir">‹ 上一项</span>${prev.name}</a>
+      <a href="unit.html#${next.id}" style="text-align:right"><span class="dir">下一项 ›</span>${next.name}</a>
+    </div>
+  </div>`;
+  window.scrollTo(0, 0);
+}
+render();
+window.addEventListener('hashchange', render);
+</script>
+
+</body>
+</html>
